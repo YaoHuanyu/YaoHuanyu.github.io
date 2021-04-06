@@ -23,4 +23,17 @@
     <url>/2021/04/06/test/</url>
     <content><![CDATA[<h2 id="测试信息查看"><a href="#测试信息查看" class="headerlink" title="测试信息查看"></a>测试信息查看</h2>]]></content>
   </entry>
+  <entry>
+    <title>startwriter</title>
+    <url>/2021/04/06/startwriter/</url>
+    <content><![CDATA[<h1 id="Start-Writer"><a href="#Start-Writer" class="headerlink" title="Start Writer"></a>Start Writer</h1>]]></content>
+      <categories>
+        <category>apply</category>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
 </search>
