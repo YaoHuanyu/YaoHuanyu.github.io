@@ -14,6 +14,37 @@
       </tags>
   </entry>
   <entry>
+    <title>startwriter</title>
+    <url>/2021/04/06/startwriter/</url>
+    <content><![CDATA[<h1 id="Start-Writer"><a href="#Start-Writer" class="headerlink" title="Start Writer"></a>Start Writer</h1>]]></content>
+      <categories>
+        <category>apply</category>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试自动打开功能</title>
+    <url>/2021/04/07/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E6%89%93%E5%BC%80%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Diary</category>
+        <category>PlayStation</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2021/04/06/test/</url>
+    <content><![CDATA[<h2 id="测试信息查看"><a href="#测试信息查看" class="headerlink" title="测试信息查看"></a>测试信息查看</h2>]]></content>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/04/06/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -30,24 +61,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>startwriter</title>
-    <url>/2021/04/06/startwriter/</url>
-    <content><![CDATA[<h1 id="Start-Writer"><a href="#Start-Writer" class="headerlink" title="Start Writer"></a>Start Writer</h1>]]></content>
-      <categories>
-        <category>apply</category>
-        <category>study</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2021/04/06/test/</url>
-    <content><![CDATA[<h2 id="测试信息查看"><a href="#测试信息查看" class="headerlink" title="测试信息查看"></a>测试信息查看</h2>]]></content>
   </entry>
   <entry>
     <title>我的博客</title>
