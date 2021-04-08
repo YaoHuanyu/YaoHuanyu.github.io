@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>测试文档</title>
-    <url>/2021/04/06/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Diary</category>
-        <category>PlayStation</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Study</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>测试自动打开功能</title>
     <url>/2021/04/07/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E6%89%93%E5%BC%80%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[]]></content>
@@ -27,44 +14,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/04/06/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2021/04/06/test/</url>
-    <content><![CDATA[<h2 id="测试信息查看"><a href="#测试信息查看" class="headerlink" title="测试信息查看"></a>测试信息查看</h2>]]></content>
-  </entry>
-  <entry>
-    <title>startwriter</title>
-    <url>/2021/04/06/startwriter/</url>
-    <content><![CDATA[<h1 id="Start-Writer"><a href="#Start-Writer" class="headerlink" title="Start Writer"></a>Start Writer</h1>]]></content>
-      <categories>
-        <category>apply</category>
-        <category>study</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的博客</title>
-    <url>/2021/04/06/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    <title>测试文档</title>
+    <url>/2021/04/06/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Diary</category>
@@ -161,7 +112,7 @@
 </tr>
 </tbody></table>
 <p>通过监听Hexo的deployAfter事件，待部署成功后自动运行Git备份命令，从而达到自动备份的目的。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>将Hexo blog目录加入Git仓库<br>首先需要在Github创建一个新的repository，名字与本地Hexo文件夹同名即可。然后进入本地Hexo blog文件夹，按顺序执行以下命令：</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="将Hexo-blog目录加入Git仓库"><a href="#将Hexo-blog目录加入Git仓库" class="headerlink" title="将Hexo blog目录加入Git仓库"></a>将Hexo blog目录加入Git仓库</h3><p>首先需要在Github创建一个新的repository，名字与本地Hexo文件夹同名即可。然后进入本地Hexo blog文件夹，按顺序执行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git remote add origin git@github.com:yourname/hexo.git</span><br><span class="line">$ git pull origin master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>每次执行hexo g(enerate)命令时，public/、.deploy、*.log文件夹会重写更新，因此需要在.gitignore文件（如果没有，手动创建一个）中写入public/、.deploy、*.log以忽略这几个目录，加快备份的速度。</p>
@@ -169,15 +120,15 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;备份hexo blog&quot;</span></span><br><span class="line">$ git push origin master</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>这三行命令便是手动推送本地文件到Github的命令，我们接下来要做的是让Node.js监听到Hexo的deployAfter事件后自动执行上述命令。</p>
-<p>安装shelljs模块<br>键入以下命令即可</p>
+<h3 id="安装shelljs模块"><a href="#安装shelljs模块" class="headerlink" title="安装shelljs模块"></a>安装shelljs模块</h3><p>命令如下。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install --save shelljs</span></span><br></pre></td></tr></table></figure>
 
-<p>加入自动执行脚本<br>在Hexo根目录的scripts文件夹（没有就自己创建一个）下新建一个js文件，文件名随意。然后加入以下代码：</p>
+<h3 id="加入自动执行脚本"><a href="#加入自动执行脚本" class="headerlink" title="加入自动执行脚本"></a>加入自动执行脚本</h3><p>在Hexo根目录的scripts文件夹（没有就自己创建一个）下新建一个js文件，文件名随意。然后加入以下代码：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;shelljs/global&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	hexo.on(<span class="string">&#x27;deployAfter&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="comment">//当deploy完成后执行备份</span></span><br><span class="line">		run();</span><br><span class="line">	&#125;);</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&quot;产生了一个错误&lt;(￣3￣)&gt; !，错误详情为：&quot;</span> + e.toString());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!which(<span class="string">&#x27;git&#x27;</span>)) &#123;</span><br><span class="line">		echo(<span class="string">&#x27;Sorry, this script requires git&#x27;</span>);</span><br><span class="line">		exit(<span class="number">1</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		echo(<span class="string">&quot;======================Auto Backup Begin===========================&quot;</span>);</span><br><span class="line">		<span class="keyword">if</span> (exec(<span class="string">&#x27;git add --all&#x27;</span>).code !== <span class="number">0</span>) &#123;</span><br><span class="line">			echo(<span class="string">&#x27;Error: Git add failed&#x27;</span>);</span><br><span class="line">			exit(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (exec(<span class="string">&#x27;git commit -am &quot;Form auto backup script\&#x27;s commit&quot;&#x27;</span>).code !== <span class="number">0</span>) &#123;</span><br><span class="line">            echo(<span class="string">&#x27;Error: Git commit failed&#x27;</span>);</span><br><span class="line">            exit(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (exec(<span class="string">&#x27;git push origin master&#x27;</span>).code !== <span class="number">0</span>) &#123;</span><br><span class="line">            echo(<span class="string">&#x27;Error: Git push failed&#x27;</span>);</span><br><span class="line">            exit(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        echo(<span class="string">&quot;==================Auto Backup Complete============================&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>效果<br>每次部署完成，类似如下的输出：</p>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">======================Auto Backup Begin===========================</span><br><span class="line"><span class="keyword">cd</span>: <span class="keyword">no</span> such <span class="keyword">file</span> or directory: ‪C:/Users/17810/OneDrive/hexo</span><br><span class="line">warning: LF will be replaced <span class="keyword">by</span> CRLF <span class="keyword">in</span> source/_posts/自动备份Hexo源文件.md.</span><br><span class="line">The <span class="keyword">file</span> will have its original <span class="keyword">line</span> endings <span class="keyword">in</span> your working directory.</span><br><span class="line">warning: LF will be replaced <span class="keyword">by</span> CRLF <span class="keyword">in</span> source/_posts/自动备份Hexo源文件.md.</span><br><span class="line">The <span class="keyword">file</span> will have its original <span class="keyword">line</span> endings <span class="keyword">in</span> your working directory.</span><br><span class="line">[master a6cb4c7] <span class="keyword">Form</span> auto backup script&#x27;s commit</span><br><span class="line"> 1 <span class="keyword">file</span> changed, 153 insertions(+)</span><br><span class="line">warning: LF will be replaced <span class="keyword">by</span> CRLF <span class="keyword">in</span> source/_posts/自动备份Hexo源文件.md.</span><br><span class="line">The <span class="keyword">file</span> will have its original <span class="keyword">line</span> endings <span class="keyword">in</span> your working directory.</span><br><span class="line">To git@github.com:JacobZjw/hexo.git</span><br><span class="line">   0beaf4c..a6cb4c7  master -&gt; master</span><br><span class="line">==================Auto Backup Complete============================</span><br></pre></td></tr></table></figure>
+<p>每次部署完成，后面会追加类似如下的输出：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">======================Auto Backup Begin===========================</span><br><span class="line">warning: LF will be replaced by CRLF <span class="keyword">in</span> <span class="built_in">source</span>/_posts/2021-04-08-自动备份Hexo源文件.md.</span><br><span class="line">The file will have its original line endings <span class="keyword">in</span> your working directory</span><br><span class="line">[master 5180657] Form auto backup script<span class="string">&#x27;s commit</span></span><br><span class="line"><span class="string"> 1 file changed, 144 insertions(+)</span></span><br><span class="line"><span class="string"> create mode 100644 &quot;source/_posts/2021-04-08-\350\207\252\345\212\250\345\244\207\344\273\275Hexo\346\272\220\346\226\207\344\273\266.md&quot;</span></span><br><span class="line"><span class="string">To https://github.com/YaoHuanyu/jcxyblog.git</span></span><br><span class="line"><span class="string">   fcd9cbe..5180657  master -&gt; master</span></span><br><span class="line"><span class="string">==================Auto Backup Complete============================</span></span><br></pre></td></tr></table></figure>
 
-<p>Hexo new 自动打开文档<br>在hexo中，我们常常使用hexo new命令来新建文章，期望每次<code>hexo new &quot;新的文档&quot;</code>时自动使用Markdown编辑器打开。</p>
+<h2 id="Hexo-new-自动打开文档"><a href="#Hexo-new-自动打开文档" class="headerlink" title="Hexo new 自动打开文档"></a>Hexo new 自动打开文档</h2><p>在hexo中，我们常常使用hexo new命令来新建文章，期望每次<code>hexo new &quot;新的文档&quot;</code>时自动使用Markdown编辑器打开。</p>
 <p>在scripts文件夹中创建一个js文件，添加以下代码：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">&#x27;child_process&#x27;</span>).exec;</span><br><span class="line"></span><br><span class="line">hexo.on(<span class="string">&#x27;new&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  spawn(<span class="string">&#x27;start  &#x27;</span> + data.path);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -191,6 +142,55 @@
       <tags>
         <tag>Hexo</tag>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/04/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>startwriter</title>
+    <url>/2021/04/06/startwriter/</url>
+    <content><![CDATA[<h1 id="Start-Writer"><a href="#Start-Writer" class="headerlink" title="Start Writer"></a>Start Writer</h1>]]></content>
+      <categories>
+        <category>apply</category>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2021/04/06/test/</url>
+    <content><![CDATA[<h2 id="测试信息查看"><a href="#测试信息查看" class="headerlink" title="测试信息查看"></a>测试信息查看</h2>]]></content>
+  </entry>
+  <entry>
+    <title>我的博客</title>
+    <url>/2021/04/06/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Diary</category>
+        <category>PlayStation</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Study</tag>
       </tags>
   </entry>
 </search>
