@@ -14,6 +14,19 @@
       </tags>
   </entry>
   <entry>
+    <title>测试自动打开功能</title>
+    <url>/2021/04/07/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E6%89%93%E5%BC%80%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Diary</category>
+        <category>PlayStation</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Study</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用并修改三方Repository</title>
     <url>/2021/04/08/%E4%BD%BF%E7%94%A8%E5%B9%B6%E4%BF%AE%E6%94%B9%E4%B8%89%E6%96%B9Repository/</url>
     <content><![CDATA[<p>在日常工作中时不时的会用到别人的东西，自己会进行一些修改，当想提交的时候并不方便。</p>
@@ -145,19 +158,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试自动打开功能</title>
-    <url>/2021/04/07/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E6%89%93%E5%BC%80%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Diary</category>
-        <category>PlayStation</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Study</tag>
       </tags>
   </entry>
   <entry>
