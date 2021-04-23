@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>测试文档</title>
+    <url>/2021/04/06/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Diary</category>
+        <category>PlayStation</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试自动打开功能</title>
+    <url>/2021/04/07/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E6%89%93%E5%BC%80%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Diary</category>
+        <category>PlayStation</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Study</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用并修改三方Repository</title>
     <url>/2021/04/08/%E4%BD%BF%E7%94%A8%E5%B9%B6%E4%BF%AE%E6%94%B9%E4%B8%89%E6%96%B9Repository/</url>
     <content><![CDATA[<p>在日常工作中时不时的会用到别人的东西，自己会进行一些修改，当想提交的时候并不方便。</p>
+<span id="more"></span>
+
 <h2 id="普遍的做法"><a href="#普遍的做法" class="headerlink" title="普遍的做法"></a>普遍的做法</h2><p>普遍的做法是GitHub上Fork后，得到自己的Repository，此处以hexo-theme-next为例。</p>
 <p>如进入<a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></p>
 <p>点击右上角Fork，得到一个自己的Repository</p>
@@ -32,34 +60,8 @@
         <category>Technology</category>
       </categories>
       <tags>
+        <tag>Study</tag>
         <tag>Git</tag>
-        <tag>Study</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试文档</title>
-    <url>/2021/04/06/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Diary</category>
-        <category>PlayStation</category>
-      </categories>
-      <tags>
-        <tag>Study</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试自动打开功能</title>
-    <url>/2021/04/07/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E6%89%93%E5%BC%80%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Diary</category>
-        <category>PlayStation</category>
-      </categories>
-      <tags>
-        <tag>Study</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -74,14 +76,16 @@
         <category>Technology</category>
       </categories>
       <tags>
-        <tag>Study</tag>
         <tag>Hexo</tag>
+        <tag>Study</tag>
       </tags>
   </entry>
   <entry>
     <title>自动备份Hexo源文件</title>
     <url>/2021/04/08/%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BDHexo%E6%BA%90%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为了避免Hexo源文件丢失，采用将其自动备份Hexo源文件到Github的方法，在执行hexo d(eploy)命令后自动执行Git命令以push源文件到Github仓库。</p>
+<span id="more"></span>
+
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>Node.js的事件监听机制监听Hexo的事件。可以用 on 方法监听 Hexo 所发布的事件，也可以使用 emit 方法对 Hexo 发布事件，参考见<a href="https://hexo.io/zh-cn/api/events.html">Hexo文档</a>。</p>
 <table>
 <thead>
@@ -156,8 +160,8 @@
         <category>Technology</category>
       </categories>
       <tags>
-        <tag>Git</tag>
         <tag>Hexo</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
