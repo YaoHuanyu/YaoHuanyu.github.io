@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>测试文档</title>
-    <url>/2021/04/06/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[]]></content>
+    <title>文章显示摘要</title>
+    <url>/2021/04/08/%E6%96%87%E7%AB%A0%E6%98%BE%E7%A4%BA%E6%91%98%E8%A6%81/</url>
+    <content><![CDATA[<p>文章内容中插入一行</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>该标签之上的文本为摘要，<span id="more"></span>需点击阅读全文才能查看剩余的内容。另外也可以在<code>_config.yml</code>配置文件中设置每页显示多少篇文章。</p>
+]]></content>
       <categories>
-        <category>Diary</category>
-        <category>PlayStation</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Study</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试自动打开功能</title>
-    <url>/2021/04/07/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E6%89%93%E5%BC%80%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Diary</category>
-        <category>PlayStation</category>
+        <category>Technology</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
@@ -62,22 +52,6 @@
       <tags>
         <tag>Study</tag>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文章显示摘要</title>
-    <url>/2021/04/08/%E6%96%87%E7%AB%A0%E6%98%BE%E7%A4%BA%E6%91%98%E8%A6%81/</url>
-    <content><![CDATA[<p>文章内容中插入一行</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>该标签之上的文本为摘要，<span id="more"></span>需点击阅读全文才能查看剩余的内容。另外也可以在<code>_config.yml</code>配置文件中设置每页显示多少篇文章。</p>
-]]></content>
-      <categories>
-        <category>Technology</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Study</tag>
       </tags>
   </entry>
   <entry>
