@@ -176,7 +176,7 @@
 <figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">include</span> *.rst *.txt *.md LICENSE VERSION *.pyx</span><br><span class="line">recursive-<span class="keyword">include</span> src<span class="regexp">/projectname/</span>bin *.py</span><br><span class="line">recursive-<span class="keyword">include</span> src<span class="regexp">/projectname/</span>conf *.py</span><br><span class="line">recursive-<span class="keyword">include</span> src<span class="regexp">/projectname/</span>core *.py</span><br><span class="line">recursive-<span class="keyword">include</span> src<span class="regexp">/projectname/</span>db *.py</span><br><span class="line">recursive-<span class="keyword">include</span> src<span class="regexp">/projectname/</span>lib *.py</span><br><span class="line">recursive-<span class="keyword">include</span> src<span class="regexp">/projectname/</span>log *.py</span><br><span class="line">recursive-<span class="keyword">include</span> docs *</span><br><span class="line">recursive-<span class="keyword">exclude</span> * __pycache__</span><br></pre></td></tr></table></figure></li>
 <li><p>构建应用包。</p>
 <p>采用如下命令构建应用包。</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">python</span> setup.<span class="keyword">py</span> sdist</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># *.tar.gz</span></span><br><span class="line">$ python setup.py sdist</span><br><span class="line"></span><br><span class="line"><span class="comment"># *.wheel</span></span><br><span class="line">$ python setup.py bdist_wheel</span><br></pre></td></tr></table></figure>
 
 <p>会在<code>Project/dist</code>目录中创建一个名为<code>projectname-0.0.1.tar.gz</code>的文件。</p>
 </li>
@@ -293,6 +293,263 @@
       <tags>
         <tag>Study</tag>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>创建个人博客</title>
+    <url>/2021/06/26/%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>个人博客的创建过程源自于一次偶然的兴趣，仅仅是想找个地儿让自己有个诉说的对象。不至于整天埋头工作，让自己丧失了一些激情，太过无聊。</p>
+<p>这里简要记录一下自己当时部署这样一个博客的主要命令及过程。</p>
+<span id="more"></span>
+
+<h2 id="Hexo-GitHub-Page"><a href="#Hexo-GitHub-Page" class="headerlink" title="Hexo + GitHub Page"></a>Hexo + GitHub Page</h2><p>依赖项 <a href="https://npm.taobao.org/mirrors/node/v15.9.0/">Node.js</a> 、Git</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建并初始化项目</span></span><br><span class="line">$ hexo init jcxyblog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到项目</span></span><br><span class="line">$ <span class="built_in">cd</span> jcxyblog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><p>生成静态网站，并在本地预览。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line"><span class="comment"># 将网站资源放在public目录下，相当于执行了hexo generate</span></span><br><span class="line">$ hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目录结构</span></span><br><span class="line"><span class="comment"># ubuntu</span></span><br><span class="line">$ tree -L 1</span><br><span class="line"><span class="comment"># windows tree默认仅显示文件夹，不显示文件；/f显示所有文件夹及文件</span></span><br><span class="line">&gt; tree /f</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务，本地预览，相当于执行了hexo server</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>db.json</td>
+<td></td>
+</tr>
+<tr>
+<td>node_modules</td>
+<td></td>
+</tr>
+<tr>
+<td>package-lock.json</td>
+<td></td>
+</tr>
+<tr>
+<td>package.json</td>
+<td>应用程序信息</td>
+</tr>
+<tr>
+<td>public</td>
+<td>静态站点存放在这</td>
+</tr>
+<tr>
+<td>scaffolds</td>
+<td>模板文件夹，新建文章时使用此文件夹下的文件作为模板</td>
+</tr>
+<tr>
+<td>source</td>
+<td>存放用户资源的地方</td>
+</tr>
+<tr>
+<td>themes</td>
+<td>主题</td>
+</tr>
+<tr>
+<td>_config.landscape.yml</td>
+<td></td>
+</tr>
+<tr>
+<td>_config.yml</td>
+<td>网站配置文件</td>
+</tr>
+</tbody></table>
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><ol>
+<li><p>新建一篇名为test的文章</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<p>新建文章默认会放到source/_posts/目录下，文件扩展名为.md，新建时只需指定文件名即可。</p>
+</li>
+<li><p>查看并编辑test.md后保存</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim <span class="built_in">source</span>/_posts/test.md</span><br><span class="line">&gt; notepad <span class="built_in">source</span>/_posts/test.md</span><br></pre></td></tr></table></figure></li>
+<li><p>本地查看</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">$ hexo g</span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h2><h3 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h3><ol>
+<li><p>在GitHub上创建一个仓库（Repository）</p>
+<p>打开 <a href="https://github.com/new%EF%BC%8C%E5%9C%A8%60Repository">https://github.com/new，在`Repository</a> name<code>输入</code>username.github.io<code>（其中</code>username<code>**必须**是自己的GitHub用户名），然后点击</code>Create repository`创建一个新仓库。</p>
+</li>
+<li><p>把Hexo生成的静态网站推送到GitHub上。</p>
+<ol>
+<li>安装 <a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>.</li>
+</ol>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编辑**_config.yml** （示例如下）:</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> <span class="comment"># https://github.com/YaoHuanyu/YaoHuanyu.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> [<span class="string">branch</span>] <span class="comment"># master</span></span><br><span class="line">  <span class="attr">message:</span> [<span class="string">message</span>]</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">Option</th>
+<th align="left">Description</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>repo</code></td>
+<td align="left">目标仓库的URL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>branch</code></td>
+<td align="left">Branch name.</td>
+<td align="left"><code>gh-pages</code> (GitHub) <code>coding-pages</code> (Coding.net) <code>master</code> (others)</td>
+</tr>
+<tr>
+<td align="left"><code>message</code></td>
+<td align="left">自定义提交消息。</td>
+<td align="left"><code>Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;</code></td>
+</tr>
+<tr>
+<td align="left"><code>token</code></td>
+<td align="left">用于向repo进行身份验证的可选token值。用<code>$</code>前缀从环境变量中获取token。</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li><p>部署网站 <code>hexo clean &amp;&amp; hexo deploy</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 执行部署命令</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>除非使用令牌或ssh密钥进行身份验证，否则将提示您输入目标存储库的用户名和密码。</li>
+<li>hexo-deployer-git不存储您的用户名和密码。使用<a href="https://git-scm.com/docs/git-credential-cache">git-credential-cache</a>暂时保存。</li>
+</ul>
+</li>
+<li><p>导航到repository settings并将”Pages”分支更改为<code>gh-pages</code>（或在配置中指定的分支）。部署的站点应该位于”Pages”设置中显示的链接上。</p>
+</li>
+</ol>
+<p>Hexo生成的静态网站就被推送到GitHub新建的仓库中。<a href="https://yaohuanyu.github.io可查看效果./">https://yaohuanyu.github.io可查看效果。</a></p>
+</li>
+</ol>
+<h2 id="绑定自己的域名"><a href="#绑定自己的域名" class="headerlink" title="绑定自己的域名"></a>绑定自己的域名</h2><h3 id="添加域名解析"><a href="#添加域名解析" class="headerlink" title="添加域名解析"></a>添加域名解析</h3><p>GitHub设置或自己生成CNAME</p>
+<p>GitHub -&gt; Repository -&gt; Settings -&gt; GitHub Pages -&gt; Custom domain</p>
+<p>或者切换到source目录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> <span class="built_in">source</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建CNAME文件</span></span><br><span class="line">$ touch CNAME</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编辑CNAME，添加域名，如blog.jcxy.ml</span></span><br><span class="line">$ cat CNAME</span><br><span class="line">blog.jcxy.ml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回项目根目录</span></span><br><span class="line">$ <span class="built_in">cd</span> ..</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成网站</span></span><br><span class="line">$ hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署到GitHub</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>   域名解析页添加记录</p>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">名称</th>
+<th align="left">内容</th>
+<th align="left">TTL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>CNAME</strong></td>
+<td align="left">blog</td>
+<td align="left">yaohuanyu.github.io</td>
+<td align="left">自动</td>
+</tr>
+</tbody></table>
+<h3 id="使用NexT主题"><a href="#使用NexT主题" class="headerlink" title="使用NexT主题"></a>使用NexT主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> jcxyblog</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开 _config.yml，配置theme:next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地预览</span></span><br><span class="line"><span class="comment"># 生成静态网站</span></span><br><span class="line">$ hexo g --debug</span><br><span class="line"><span class="comment"># 开启debug模式</span></span><br><span class="line">$ hexo s --debug</span><br><span class="line"></span><br><span class="line"><span class="comment"># 预览若无问题，使用hexo d直接部署到GitHub即可。</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h3><p>更新主题命令如下。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/next</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>详细应用参考<a href="http://theme-next.iissnan.com/getting-started.html">配置文档</a></p>
+<h3 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h3><ol>
+<li><p>新增导航栏页面</p>
+<p>在主题配置文件themes/next/_config.yml中搜索menu，在menu中配置对应的导航栏选项，示例如下。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br></pre></td></tr></table></figure>
+
+<p>与英文对应中文在themes/next/languages/zh-CN.yml中进行匹配。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">首页</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">归档</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">分类</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">标签</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">关于</span></span><br><span class="line">  <span class="attr">search:</span> <span class="string">搜索</span></span><br><span class="line">  <span class="attr">schedule:</span> <span class="string">日程表</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">站点地图</span></span><br><span class="line">  <span class="attr">commonweal:</span> <span class="string">公益</span> <span class="number">404</span></span><br></pre></td></tr></table></figure></li>
+<li><p>新建页面</p>
+<p>默认情况下，导航栏上的标签（tags）、关于（about）、分类（categories)等页面是没有的。需要在项目根目录下执行以下命令。否则会<code>Cannot GET /categories/</code> <code>Cannot GET /tags/</code>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建【分类】页面</span></span><br><span class="line">$ hexo new page categories</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: ...\jcxyblog\<span class="built_in">source</span>\categories\index.md</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建【标签】页面</span></span><br><span class="line">$ hexo new page tags</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: ...\jcxyblog\<span class="built_in">source</span>\tags\index.md</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建【关于】页面</span></span><br><span class="line">$ hexo new page about</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: ...\jcxyblog\<span class="built_in">source</span>\about\index.md</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>禁用评论</p>
+<p>若使用评论，则默认所有页面都会开启评论模块，有些页面不需要评论，将comments设为false即可禁用，示例如下。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">页面名字</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-04-06 23:08:47</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<li><p>指定页面类型</p>
+<p>type字段用来指定页面类型，示例如下。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-04-06 19:10:02</span></span><br><span class="line"><span class="comment"># 增加type属性</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="hexo-搜索功能"><a href="#hexo-搜索功能" class="headerlink" title="hexo 搜索功能"></a>hexo 搜索功能</h2><p>安装插件</p>
+   <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>修改站点配置文件</p>
+   <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+
+
+<p>   修改 主题配置文件</p>
+   <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+
+<h2 id="开始写作"><a href="#开始写作" class="headerlink" title="开始写作"></a>开始写作</h2><h3 id="创建文章并熟悉布局"><a href="#创建文章并熟悉布局" class="headerlink" title="创建文章并熟悉布局"></a>创建文章并熟悉布局</h3><ol>
+<li><p>新建一篇文章</p>
+<p>新建文章命令如下。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [布局] &lt;文章标题&gt;</span><br></pre></td></tr></table></figure>
+
+<p>例如，新建一篇文章”我的博客“，示例如下。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new 我的博客</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: \jcxyblog\<span class="built_in">source</span>\_posts\我的博客.md</span><br><span class="line"></span><br><span class="line">$ cat <span class="built_in">source</span>/_posts/我的博客.md</span><br><span class="line">---</span><br><span class="line">title: 我的博客</span><br><span class="line">date: 2021-04-06 23:22:24</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>默认文章文件名不带有创建日期，想在文件名之前带上创建日期，可做如下设置。</p>
+<p>打开网站配置文件，搜索<code>newpostname</code>，将其设为new_post_name: :year-:month-:day-:tiltle.md</p>
+<p>再次新建时，则变成如下格式。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new 测试文档</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: jcxyblog\<span class="built_in">source</span>\_posts\2021-04-06-测试文档.md</span><br></pre></td></tr></table></figure>
+
+<p>Hexo支持三种布局，可将其理解为不同类型的Markdown文件，具体如下。</p>
+<table>
+<thead>
+<tr>
+<th align="center">布局</th>
+<th align="center">说明</th>
+<th align="center">存放路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">文章</td>
+<td align="center">用于发布的文章</td>
+<td align="center">source/_posts</td>
+</tr>
+<tr>
+<td align="center">页面</td>
+<td align="center">导航栏上的项目</td>
+<td align="center">source</td>
+</tr>
+<tr>
+<td align="center">草稿</td>
+<td align="center">还未完成的草稿</td>
+<td align="center">source/_drafts</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>新建草稿</p>
+<p>新建草稿命令如下。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new draft 草稿文档</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Created: d:\WorkSpace\Sty_C\jcxyblog\<span class="built_in">source</span>\_drafts\草稿文档.md</span><br><span class="line">$ cat <span class="built_in">source</span>\_drafts\草稿文档.md</span><br><span class="line">---</span><br><span class="line">title: 草稿文档</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>草稿没有创建日期。</p>
+<p>草稿正式发布，使用publish，命令如下。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo publish _drafts 草稿文档</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="评论设置"><a href="#评论设置" class="headerlink" title="评论设置"></a>评论设置</h2><h3 id="开启评论"><a href="#开启评论" class="headerlink" title="开启评论"></a>开启评论</h3><ol>
+<li><p>然后前往<a href="https://leancloud.cn/">leancloud</a>注册账号，随意注册一个应用</p>
+</li>
+<li><p>打开设置应用Keys，获取appid和appkey。</p>
+</li>
+<li><p>next文件夹的_config.yml文件，找到valine字段</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Valine</span></span><br><span class="line"><span class="comment"># For more information: https://valine.js.org, https://github.com/xCss/Valine</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">appid:</span> <span class="comment"># 填入自己的leancloud应用appid</span></span><br><span class="line">  <span class="attr">appkey:</span> <span class="comment"># 填入自己的leancloud应用appkey</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># Mail notifier</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># Verification code</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">Just</span> <span class="string">go</span> <span class="string">go</span> <span class="comment"># Comment box placeholder</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># Gravatar style</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail,link</span> <span class="comment"># Custom comment header</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># Pagination size</span></span><br><span class="line">  <span class="attr">language:</span>  <span class="comment"># Language, available values: en, zh-cn</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">false</span> <span class="comment"># Article reading statistic</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">false</span> <span class="comment"># Whether to record the commenter IP</span></span><br><span class="line">  <span class="attr">serverURLs:</span> <span class="comment"># When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span></span><br><span class="line">  <span class="comment">#post_meta_order: 0</span></span><br></pre></td></tr></table></figure></li>
+<li><p>以上。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Diary</category>
+        <category>PlayStation</category>
+      </categories>
+      <tags>
+        <tag>Study</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
