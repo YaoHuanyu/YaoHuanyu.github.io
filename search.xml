@@ -552,4 +552,22 @@
         <tag>Hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>TensorFlow_V2兼容V1</title>
+    <url>/2021/07/16/TensorFlow-V2%E5%85%BC%E5%AE%B9V1/</url>
+    <content><![CDATA[<p>使用<code>pip install tf-nightly-gpu</code>无脑将TensorFlow升级到2.7后，之前的项目中有用1.14版本的TensorFlow出现兼容的问题，可通过如下几行进行适配。</p>
+<span id="more"></span>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow</span><br><span class="line"><span class="keyword">if</span> tensorflow.__version__.split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>] == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">    <span class="keyword">import</span> tensorflow.compat.v1 <span class="keyword">as</span> tf</span><br><span class="line">    tf.disable_v2_behavior()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Technology</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Study</tag>
+        <tag>Tensorflow</tag>
+      </tags>
+  </entry>
 </search>
