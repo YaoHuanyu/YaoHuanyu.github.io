@@ -599,4 +599,139 @@
         <tag>Environment</tag>
       </tags>
   </entry>
+  <entry>
+    <title>PyInstaller打包exe</title>
+    <url>/2022/01/14/PyInstaller%E6%89%93%E5%8C%85exe/</url>
+    <content><![CDATA[<p>python打包*.py为exe常用PyInstaller。安装方法：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyinstaller</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>@<a href="%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9">TOC</a></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>基本命令如下。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyinstaller scriptname</span><br></pre></td></tr></table></figure>
+
+<p>其中scriptname为打包的文件或一个.spec-file</p>
+<p><strong>常用语句形式</strong></p>
+<ul>
+<li><p>有界面的一般形式</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyinstaller -Fw xxx.py -i aaa.ico</span><br></pre></td></tr></table></figure></li>
+<li><p>无界面的一般形式</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyinstaller -F xxx.py -i aaa.ico</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="常用可选参数"><a href="#常用可选参数" class="headerlink" title="常用可选参数"></a>常用可选参数</h3><p><strong>简略命令</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>可选参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-F</td>
+<td>打包为一个文件</td>
+</tr>
+<tr>
+<td>-D</td>
+<td>一个目录，包含exe，依赖多</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>使用控制台</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>无控制台，使用窗口</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>加.ico图标</td>
+</tr>
+<tr>
+<td>–version-file</td>
+<td>添加版本信息</td>
+</tr>
+</tbody></table>
+<p><strong>详细命令</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>可选参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-D, –onedir</td>
+<td>创建一个目录，包含exe文件，但会依赖很多文件（默认选项）</td>
+</tr>
+<tr>
+<td>-F, –onefile</td>
+<td>打包为一个exe</td>
+</tr>
+<tr>
+<td>–specpath DIR</td>
+<td>指定生成.spec-file的目录，默认是当前目录</td>
+</tr>
+<tr>
+<td>-n NAME, –name NAME</td>
+<td>指定打包应用和.spec-file的名字，默认是第一个脚本的文件名</td>
+</tr>
+<tr>
+<td>-i &lt;FILE.ico&gt;, –icon &lt;FILE.ico&gt;</td>
+<td>添加图标（可选实际很多类型&lt;FILE.ico or FILE.exe,ID or FILE.icns or “NONE”&gt;)</td>
+</tr>
+<tr>
+<td>–version-file FILE</td>
+<td>从version-file为exe增加版本信息</td>
+</tr>
+<tr>
+<td>-c, –console, –nowindowed</td>
+<td>使用控制台，无窗口（默认）。在Windows中第一个脚本是.pyw文件，此项无效。</td>
+</tr>
+<tr>
+<td>-w, –windowed, –noconsole</td>
+<td>使用窗口，无控制台。Windows第一脚本是.pyw自动启用。在*NIX系统此项忽略。</td>
+</tr>
+</tbody></table>
+<p>pyinstaller更多详细命令可参考命令<code>pyinstaller --help</code>的输出结果。</p>
+<h2 id="增加版本信息"><a href="#增加版本信息" class="headerlink" title="增加版本信息"></a>增加版本信息</h2><p>版本信息增加两步走：</p>
+<ol>
+<li>使用 pyi-grab_version 获取版本信息的模板文件。</li>
+<li>使用 pyi-set_version 为打包好的程序附加版本信息。</li>
+</ol>
+<h3 id="获取版本信息模板文件"><a href="#获取版本信息模板文件" class="headerlink" title="获取版本信息模板文件"></a>获取版本信息模板文件</h3><p>pyi-grab_version对已有版本信息的exe(如Chrome、微信、QQ等等)只要有就成。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyi-grab_version [-h] exe-file [out-filename]</span><br></pre></td></tr></table></figure>
+
+<p>示例如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyi-grab_version <span class="string">&quot;C:\Program Files\Nutstore\Nutstore.exe&quot;</span> version-info.txt</span><br></pre></td></tr></table></figure>
+
+<p>version-info.txt就是获取的版本信息模板，我们可以对它进行编辑，修改成我们想给打包的程序设定的信息。</p>
+<h3 id="设置版本信息"><a href="#设置版本信息" class="headerlink" title="设置版本信息"></a>设置版本信息</h3><p>有两种方式</p>
+<ul>
+<li><p>在打包时加入版本信息</p>
+<p>加入选项 –version-file version-file</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyinstaller -Fw --version-file version-file py-file</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyinstaller -Fw --version-file version-info.txt xxx.py</span><br></pre></td></tr></table></figure></li>
+<li><p>另外添加版本信息</p>
+<p>使用pyi-set_version为已打包好的exe文件添加或修改版本信息</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyi-set_version version-file exe-file</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pyi-set_version version-info.txt xxx.exe</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="附加资源文件"><a href="#附加资源文件" class="headerlink" title="附加资源文件"></a>附加资源文件</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#生成资源文件目录访问路径</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">resource_path</span>(<span class="params">r_path</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">getattr</span>(sys, <span class="string">&#x27;frozen&#x27;</span>, <span class="literal">False</span>): <span class="comment">#是否Bundle Resource</span></span><br><span class="line">        base_path = sys._MEIPASS</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        base_path = os.path.abspath(<span class="string">&quot;.&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> os.path.join(base_path, r_path)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">root, startno=<span class="number">0</span>, endno=<span class="number">537</span></span>):</span></span><br><span class="line">    <span class="comment"># 其他使用资源文件的地方</span></span><br><span class="line">    file_n = resource_path(os.path.join(<span class="string">&quot;res&quot;</span>,<span class="string">&#x27;dataset_registry.csv&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<p>修改.spec文件</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">datas=[(<span class="string">&#x27;res&#x27;</span>,<span class="string">&#x27;res&#x27;</span>)],</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Technology</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
 </search>
