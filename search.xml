@@ -39,6 +39,22 @@
       </tags>
   </entry>
   <entry>
+    <title>文章显示摘要</title>
+    <url>/2021/04/08/%E6%96%87%E7%AB%A0%E6%98%BE%E7%A4%BA%E6%91%98%E8%A6%81/</url>
+    <content><![CDATA[<p>文章内容中插入一行</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>该标签之上的文本为摘要，<span id="more"></span>需点击阅读全文才能查看剩余的内容。另外也可以在<code>_config.yml</code>配置文件中设置每页显示多少篇文章。</p>
+]]></content>
+      <categories>
+        <category>Technology</category>
+      </categories>
+      <tags>
+        <tag>Study</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自动备份Hexo源文件</title>
     <url>/2021/04/08/%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BDHexo%E6%BA%90%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为了避免Hexo源文件丢失，采用将其自动备份Hexo源文件到Github的方法，在执行hexo d(eploy)命令后自动执行Git命令以push源文件到Github仓库。</p>
@@ -123,22 +139,6 @@
       </tags>
   </entry>
   <entry>
-    <title>文章显示摘要</title>
-    <url>/2021/04/08/%E6%96%87%E7%AB%A0%E6%98%BE%E7%A4%BA%E6%91%98%E8%A6%81/</url>
-    <content><![CDATA[<p>文章内容中插入一行</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>该标签之上的文本为摘要，<span id="more"></span>需点击阅读全文才能查看剩余的内容。另外也可以在<code>_config.yml</code>配置文件中设置每页显示多少篇文章。</p>
-]]></content>
-      <categories>
-        <category>Technology</category>
-      </categories>
-      <tags>
-        <tag>Study</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>打包python应用</title>
     <url>/2021/04/12/%E6%89%93%E5%8C%85python%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<p>设计，构建，测试以及维护一个应用要做很多的工作。可重用性是Python的生存方式，据此该如何打包自己的应用并发布给其他人安装使用呢？</p>
@@ -204,60 +204,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows远程桌面端口修改</title>
-    <url>/2021/04/28/Windows%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E7%AB%AF%E5%8F%A3%E4%BF%AE%E6%94%B9/</url>
-    <content><![CDATA[<p>Windows远程桌面端口3389，如果想进行修改可按以下方法进行。</p>
-<span id="more"></span>
-
-<ol>
-<li><p>打开注册表</p>
-<p>运行-&gt;regedit</p>
-</li>
-<li><p>找到如下字段</p>
-</li>
-<li><p>计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp</p>
-</li>
-<li><p>找到<code>protNumber</code>项，选择十进制进行修改成自己期望的端口号即可，需满足端口号要求。</p>
-<p>默认`portNumber 3389</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Technology</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu 16.04 python虚环境管理（pyenv）之安装</title>
-    <url>/2021/04/28/Ubuntu-16-04-python%E8%99%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%EF%BC%88pyenv%EF%BC%89%E4%B9%8B%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<p>windows下一般常用Conda管理虚环境，简单方便。偶然在Ubuntu部署环境，感觉Anaconda太过臃肿，后来发现pyenv用起来也很方便，于是简要摘记。</p>
-<span id="more"></span>
-
-<ol>
-<li><p>安装依赖及一些工具包</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install -y git</span><br><span class="line">$ sudo apt-get install -y build-essential libbz2-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev tk-dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># optional scientific package headers (for Numpy, Matplotlib, SciPy, etc.)</span></span><br><span class="line">$ sudo apt-get install -y libpng-dev libfreetype6-dev </span><br></pre></td></tr></table></figure></li>
-<li><p>使用pyenv安装脚本进行安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash</span><br></pre></td></tr></table></figure></li>
-<li><p>增加如下初始化语句到~/.bashrc</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$HOME</span>/.pyenv/bin:<span class="variable">$PATH</span>&quot;</span></span><br><span class="line">$ <span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv init -)</span>&quot;</span></span><br><span class="line">$ <span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv virtualenv-init -)</span>&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>重新载入profile</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>安装操作完成。O(∩_∩)O~</p>
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-        <category>Technology</category>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Study</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ubuntu 16.04 python虚环境管理（pyenv）--应用</title>
     <url>/2021/04/28/Ubuntu-16-04-python%E8%99%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%EF%BC%88pyenv%EF%BC%89-%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<p>根据<a href="http://blog.jcxy.ml/2021/04/28/Ubuntu-16-04-python%E8%99%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%EF%BC%88pyenv%EF%BC%89%E4%B9%8B%E5%AE%89%E8%A3%85/">上一篇安装pyenv</a>之后，应用起来就很easy了。本文将Pyenv应用予以备忘。</p>
@@ -293,6 +239,60 @@
       <tags>
         <tag>Study</tag>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu 16.04 python虚环境管理（pyenv）之安装</title>
+    <url>/2021/04/28/Ubuntu-16-04-python%E8%99%9A%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%EF%BC%88pyenv%EF%BC%89%E4%B9%8B%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>windows下一般常用Conda管理虚环境，简单方便。偶然在Ubuntu部署环境，感觉Anaconda太过臃肿，后来发现pyenv用起来也很方便，于是简要摘记。</p>
+<span id="more"></span>
+
+<ol>
+<li><p>安装依赖及一些工具包</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install -y git</span><br><span class="line">$ sudo apt-get install -y build-essential libbz2-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev tk-dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># optional scientific package headers (for Numpy, Matplotlib, SciPy, etc.)</span></span><br><span class="line">$ sudo apt-get install -y libpng-dev libfreetype6-dev </span><br></pre></td></tr></table></figure></li>
+<li><p>使用pyenv安装脚本进行安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash</span><br></pre></td></tr></table></figure></li>
+<li><p>增加如下初始化语句到~/.bashrc</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> PATH=<span class="string">&quot;<span class="variable">$HOME</span>/.pyenv/bin:<span class="variable">$PATH</span>&quot;</span></span><br><span class="line">$ <span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv init -)</span>&quot;</span></span><br><span class="line">$ <span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(pyenv virtualenv-init -)</span>&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>重新载入profile</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>安装操作完成。O(∩_∩)O~</p>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+        <category>Technology</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Study</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows远程桌面端口修改</title>
+    <url>/2021/04/28/Windows%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E7%AB%AF%E5%8F%A3%E4%BF%AE%E6%94%B9/</url>
+    <content><![CDATA[<p>Windows远程桌面端口3389，如果想进行修改可按以下方法进行。</p>
+<span id="more"></span>
+
+<ol>
+<li><p>打开注册表</p>
+<p>运行-&gt;regedit</p>
+</li>
+<li><p>找到如下字段</p>
+</li>
+<li><p>计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp</p>
+</li>
+<li><p>找到<code>protNumber</code>项，选择十进制进行修改成自己期望的端口号即可，需满足端口号要求。</p>
+<p>默认`portNumber 3389</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Technology</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
