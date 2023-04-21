@@ -757,4 +757,20 @@
         <tag>Python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Pycharm使用VTK代码提示</title>
+    <url>/2023/04/21/Pycharm%E4%BD%BF%E7%94%A8VTK%E4%BB%A3%E7%A0%81%E6%8F%90%E7%A4%BA/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> vtkmodules.<span class="built_in">all</span> <span class="keyword">as</span> vtk</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>直接使用<code>import vtk</code> 或者 <code>import vtkmodules</code>语句都没有办法在PyCharm里进行编码过程中给出有效提示，非常影响效率。采用以上语句可有效解决这个问题。</p>
+]]></content>
+      <categories>
+        <category>Technology</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
 </search>
